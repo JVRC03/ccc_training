@@ -1,0 +1,68 @@
+1 + T(n/2) --> log(n)
+
+1 + 2T(n/2) --> n
+
+n + T(n/2) --> nlog(n)
+
+n + 2T(n/2) --> n^2
+
+   def f(n):
+       if n <= 0:          --> O(n)
+          return 
+        1 + f(n-1)
+
+***
+    if 2 function calls in single statement --> O(2^n) why?
+       - because, from main :
+                      - 1st call
+                            |
+                        ---------
+                        |       |
+                       call1   call2
+    
+                      ........
+              it becomes -> 2^0 call --> 2^1 calls --> 2^2 calls .....--> 2^n calls
+
+
+*** 
+    1 -indexed based languages ==> R, Fortran, cobol, sql ...
+
+
+***
+    Narcissistic number (sometimes also called Armstrong number).
+    
+    👉 Simple definition:
+    A narcissistic number is a number that is equal to the sum of its own digits each raised to the power of the number of digits.
+    
+    Example:
+        153 = 1^3 + 5^3 + 3^3 == 153
+    
+    So, if a number satisfies this property, it’s called Narcissistic / Armstrong number.
+
+
+***
+
+   A happy number is a number that eventually becomes 1 when you repeatedly replace it with the sum of the squares of its digits.
+
+  👉 If it ends in 1 → it’s a happy number.
+  👉 If it goes into a loop (never reaches 1) → it’s not happy.
+
+  ex : 
+      1² + 9² = 1 + 81 = 82  
+      8² + 2² = 64 + 4 = 68  
+      6² + 8² = 36 + 64 = 100  
+      1² + 0² + 0² = 1  (yes) 
+
+      2² + 0² = 4  
+      4² = 16  
+      1² + 6² = 1 + 36 = 37  
+      3² + 7² = 9 + 49 = 58  
+      5² + 8² = 25 + 64 = 89  
+      8² + 9² = 64 + 81 = 145  
+      1² + 4² + 5² = 1 + 16 + 25 = 42  
+      4² + 2² = 16 + 4 = 20  ← (back to start, loop) (NO)
+
+
+
+
+
