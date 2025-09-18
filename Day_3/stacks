@@ -1,0 +1,49 @@
+STACK:
+
+A stack is a data structure that stores items in a Last In, First Out (LIFO) order.
+
+  You can only add (push) a plate on the top.
+  You can only remove (pop) the top plate.
+
+-- Basic Operations
+
+    push(x) → Add an element on top.
+    
+    pop() → Remove the top element.
+    
+    peek() / top() → Look at the top element without removing it.
+    
+    isEmpty() → Check if the stack has no elements.
+    
+    isFull() → Check if the stack is full (if fixed size).
+
+C _ Implementation : 
+
+// Push function
+void push(int x) {
+    if (top == MAX - 1) {
+        printf("Stack Overflow!\n");
+    } else {
+        stack[++top] = x;
+        printf("%d pushed\n", x);
+    }
+}
+
+// Pop function
+void pop() {
+    if (top == -1) {
+        printf("Stack Underflow!\n");
+    } else {
+        printf("%d popped\n", stack[top--]);
+    }
+}
+
+// Peek function
+void peek() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+    } else {
+        printf("Top element: %d\n", stack[top]);
+    }
+}
+
